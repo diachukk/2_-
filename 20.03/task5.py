@@ -9,8 +9,8 @@ class FirstScreen(Screen):
     def __init__(self, name = "first"):
         super().__init__(name = name)
         btn = Button(text = "First button!")
-        btn.on.oress - self.next
-        self.add_widget
+        btn.on_press = self.next
+        self.add_widget(btn)
 
     def next(self):
         self.manager.transition.sirection = "up"
@@ -21,8 +21,8 @@ class SecondScreen(Screen):
     def __init__(self, name = "second"):
         super().__init__(name = name)
         btn = Button(text = "Second button!")
-        btn.on.oress - self.next
-        self.add_widget
+        btn.on_press = self.next
+        self.add_widget(btn)
 
     def next(self):
         self.manager.transition.sirection = "left"
