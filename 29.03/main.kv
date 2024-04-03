@@ -1,18 +1,78 @@
+#:set color_btn_txt_d "#E9EFC0"
+#:set color_btn_bg "#BFD433"
+#:set color_btn_bg_pr "#3030D3"
+#:set color_bg "#E44C15"
+#:set color_bg_a "#0C0C2E"
+#:set color_bg_b "#ac3939"
+
+
+<ButtonMenu@Button>:
+    size_hint_y: 0.3
+    font_size: "30sp"
+    color: color_btn_txt_d
+    background_color: color_btn_bg
+    background_normal: ''
+    on_release: self.background_color = color_btn_bg
+    background_down: ''
+    on_press: self.background_color = color_btn_bg_pr
+    font_name: "assets/Cabin-Italic-VariableFont_wdth,wght.ttf"
+
+
+
 <MenuScreen>:
     canvas.before:
         Color:
-            rgba: 1,1,0,1
+            rgba: rgba("#3030D3")
+
         Rectangle:
             pos:self.pos
             size:self.size
     BoxLayout:
-        orietation: 'vertical'
+        orientation: 'vertical'
         padding: '20dp'
         spacing: '20dp'
        
         Label:
-            text: 'Cosmo Adventure'
-            font_name: 'assets/Comforter-Regular.ttf'
+            text: 'GAME - JAIL'
+            font_name: 'assets/Cabin-Italic-VariableFont_wdth,wght.ttf'
             font_size: '30dp'
             color: 'red'
-            size_hint_y: .2 
+            size_hint_y: 0.2 
+        Image:
+            source: 'assets/images/6.png'
+            size_hint_y: .9
+            allow_stretch: True
+        
+        Widget:
+            size_hint_y: 0.3
+            
+        ButtonMenu:
+            text: "Start"
+            on_press: root.manager.current = 'game'
+        ButtonMenu:
+            text: "Lider Board"
+        ButtonMenu:
+            text: "Setting"
+
+<GameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 0.1
+            Label:
+                text: "score:" + str(root.points)
+                font_name: 'assets/Cabin-Italic-VariableFont_wdth,wght.ttf'
+                font_size: '30sp'
+                color: color_a 
+        FloatLayout:
+            size_hint_y: 0.8
+            Planet:
+                id: planet 
+        BoxLayout:
+            size_hint_y: 0.1
+<Planet>
+    allow_stretch: True
+    size_hint: None, None
+    size: '200dp', "200dp"
+    center: self.parent.center
+
