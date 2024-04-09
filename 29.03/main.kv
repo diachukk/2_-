@@ -2,6 +2,7 @@
 #:set color_btn_bg "#BFD433"
 #:set color_btn_bg_pr "#3030D3"
 #:set color_bg "#E44C15"
+#:set color_a "#FD3A0F"
 #:set color_bg_a "#0C0C2E"
 #:set color_bg_b "#ac3939"
 
@@ -33,10 +34,10 @@
         spacing: '20dp'
        
         Label:
-            text: 'GAME - JAIL'
+            text: 'CS2 Knife'
             font_name: 'assets/Cabin-Italic-VariableFont_wdth,wght.ttf'
             font_size: '30dp'
-            color: 'red'
+            color: 2, 1, 2, 1
             size_hint_y: 0.2 
         Image:
             source: 'assets/images/6.png'
@@ -66,11 +67,11 @@
                 color: color_a 
         FloatLayout:
             size_hint_y: 0.8
-            Planet:
-                id: planet 
+            Knife:
+                id: knife
         BoxLayout:
             size_hint_y: 0.1
-<Planet>
+<Knife>
     allow_stretch: True
     size_hint: None, None
     size: '200dp', "200dp"
